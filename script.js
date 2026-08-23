@@ -18,6 +18,8 @@ function openInvitation(){
   }
   loader.classList.add("closed");
   invitation.classList.remove("hidden");
+  // Start the invitation text reveal only after the opening sequence.
+  requestAnimationFrame(() => invitation.classList.add("reveal-lines"));
   document.body.style.overflow = "auto";
   window.scrollTo({top:0,behavior:"smooth"});
 }
