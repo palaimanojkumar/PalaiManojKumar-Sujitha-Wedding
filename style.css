@@ -537,32 +537,32 @@ html, body {
   }
 }
 
+
 /* =========================================================
-   FINAL INVITATION: LINE-BY-LINE REVEAL
+   FINAL LINE-BY-LINE INVITATION REVEAL
+   Starts only when the invitation is opened.
    ========================================================= */
 
-.final-invitation .invitation-line {
+.invitation.reveal-lines .invite-line,
+.invitation.reveal-lines .card-side > .script-name,
+.invitation.reveal-lines .card-side > .signature,
+.invitation.reveal-lines .card-side > .bottom-note {
   opacity: 0;
-  transform: translateY(18px);
-  animation: weddingLineReveal 0.75s ease forwards;
+  transform: translateY(16px);
+  animation: inviteLineIn .65s ease forwards;
 }
 
-/* The sequence is deliberately gentle and staggered. */
-.final-invitation .invitation-line:nth-of-type(1) { animation-delay: .15s; }
-.final-invitation .invitation-line:nth-of-type(2) { animation-delay: .45s; }
-.final-invitation .invitation-line:nth-of-type(3) { animation-delay: .75s; }
-.final-invitation .invitation-line:nth-of-type(4) { animation-delay: 1.05s; }
-.final-invitation .invitation-line:nth-of-type(5) { animation-delay: 1.35s; }
-.final-invitation .invitation-line:nth-of-type(6) { animation-delay: 1.65s; }
-.final-invitation .invitation-line:nth-of-type(7) { animation-delay: 1.95s; }
-.final-invitation .invitation-line:nth-of-type(8) { animation-delay: 2.25s; }
-.final-invitation .invitation-line:nth-of-type(9) { animation-delay: 2.55s; }
-.final-invitation .invitation-line:nth-of-type(10) { animation-delay: 2.85s; }
+.invitation.reveal-lines .invite-line:nth-child(1) { animation-delay: .10s; }
+.invitation.reveal-lines .invite-line:nth-child(2) { animation-delay: .40s; }
+.invitation.reveal-lines .invite-line:nth-child(3) { animation-delay: .70s; }
+.invitation.reveal-lines .invite-line:nth-child(4) { animation-delay: 1.00s; }
+.invitation.reveal-lines .invite-line:nth-child(5) { animation-delay: 1.30s; }
+.invitation.reveal-lines .invite-line:nth-child(6) { animation-delay: 1.60s; }
 
-@keyframes weddingLineReveal {
+@keyframes inviteLineIn {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -570,31 +570,36 @@ html, body {
   }
 }
 
-/* Couple names */
-.final-invitation .script-name {
+.line-group {
+  margin: 10px 0;
+}
+
+.invite-line {
+  display: block;
+  margin: 6px auto;
+  line-height: 1.5;
+}
+
+.script-name {
   line-height: 1.05;
 }
 
-/* Mobile: keep every line comfortably inside the screen */
+/* On phones, keep every line inside the card width. */
 @media screen and (max-width: 600px) {
-  .final-invitation .invitation-line {
-    max-width: 92vw;
+  .invite-line {
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .final-invitation .script-name {
-    font-size: clamp(38px, 11vw, 58px);
-  }
-
-  .final-invitation .intro {
-    font-size: 16px;
-    line-height: 1.55;
-  }
-
-  .final-invitation .hero-date,
-  .final-invitation .hero-place {
     font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .script-name {
+    font-size: clamp(38px, 10vw, 56px) !important;
+    max-width: 90vw;
+  }
+
+  .family-line {
     line-height: 1.45;
   }
 }
