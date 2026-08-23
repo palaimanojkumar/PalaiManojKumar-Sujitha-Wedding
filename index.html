@@ -20,7 +20,15 @@
   <button id="musicToggle" class="music-toggle" aria-label="Toggle wedding music" title="Music on/off">🔇</button>
 
   <div class="loader video-loader" id="loader" style="position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;overflow:hidden;display:block;background:#080504;z-index:3000;">
-    <video id="ganeshOpeningVideo" class="opening-video" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+    <video
+  id="ganeshOpeningVideo"
+  class="opening-video"
+  muted
+  playsinline
+  webkit-playsinline
+  preload="auto"
+  poster="assets/ganesh-idol.jpg"
+  style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       <source src="assets/ganesh-temple-opening.mp4" type="video/mp4">
     </video>
 
